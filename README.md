@@ -1,6 +1,7 @@
 # Select
 > A jquery plugin for replacing native selects, supports custom css styles
 
+[中文文档](https://github.com/shulkme/select/tree/master/zh "中文文档")
 ![demo preview](https://github.com/shulkme/select/blob/master/preview.png)
 
 ##### Example using jsDelivr

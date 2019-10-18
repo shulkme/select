@@ -1,0 +1,150 @@
+$color_accent : #007bff;
+$color_hover  : #ecf5ff;
+$color_border : #D9D9D9;
+$color_text_normal : #666;
+$color_text_disabled : #ccc;
+$color_disabled : #F5F7FA;
+$size_com : (
+  xs : (
+    height    : 28px,
+    font      : 12px
+  ),
+  sm : (
+    height    : 32px,
+    font      : 12px
+  ),
+  df : (
+    height    : 36px,
+    font      : 14px
+  ),
+  lg : (
+    height    : 40px,
+    font      : 14px
+  )
+);
+$shadow : 2px 4px 12px 0px #D9D9D9;
+
+.select-wrapper{
+  display: block;
+  position: absolute;
+  .select-content{
+    display: block;
+    max-height: 200px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: relative;
+    overflow: auto;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+    //border: 1px solid #f5f5f5;  //If the IE < 9, it is recommended to add a border, because box-shadow only supports IE9+
+    .select-options{
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      overflow-y: auto;
+      overflow-x: hidden;
+      .select-option-item{
+        display: block;
+        min-width: 80px;
+        height: 32px;
+        line-height: 32px;
+        margin: 0;
+        list-style: none;
+        font-size: 12px;
+        padding: 0 8px;
+        text-align: left;
+        color: $color_text_normal;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        &.item-active{
+          background-color: $color_accent!important;
+          color: #fff;
+        }
+        &.item-disabled{
+          background-color: #fff!important;
+          color: $color_text_disabled!important;
+          pointer-events: none;
+        }
+        &:hover{
+          background-color: $color_hover;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.select{
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  position: relative;
+  *{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .select-inner{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    position: relative;
+    border: 1px solid $color_border;
+    border-radius: 2px;
+    background-color: #fff;
+    cursor: pointer;
+    width: 140px;
+    height: map_get(map_get($size_com,df),height);
+    line-height: map_get(map_get($size_com,df),height) - 2px;
+    font-size: map_get(map_get($size_com,df),font);
+    padding: 0 8px;
+    color: $color_text_normal;
+    &:after{
+      display: block;
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 8px;
+      margin-top: -6px;
+      width: 12px;
+      height: 12px;
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAhklEQVQoU5WR0Q2DMAxEXzZgpHaCwgbtBjfKbVCYADpBV2IElApQCgEUf0Wxz/dsBwojFNZTLpB0Ayrbw5mbpBoYw/zogZftNieS9ATeQPNDSj52om1unSHtsuDl3P+GlhSRHsB9RvsCnW0tqLstJaJY87Ed+dfIrlWSY0Xa+dDh6pDFh5sA44wxPQT6sjQAAAAASUVORK5CYII=");
+      background-repeat: no-repeat;
+      background-size: auto auto;
+      background-position: center center;
+    }
+
+  }
+  &.select-open{
+    .select-inner{
+      border-color: $color_accent;
+      &:after{
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAhElEQVQoU62R0Q3CMBBDXzZgpI5QNqAbuJt4g3aDMgIjsQHo1LRKQ0GKRH7Pz/blEo0vNeo5BSQZeNkea8MPQNIM9Fm42B5K6AAU4i6LHsAB2gFJN2ACrrbvAUiKpAUYbEfyukMh3gdbjXqWzlzqRcv0AKLvZavx7Zuz8fM/d/h1zOaEN6BrMj1hQmfgAAAAAElFTkSuQmCC");
+      }
+    }
+  }
+  &.select-disabled{
+    cursor: not-allowed;
+    .select-inner{
+      pointer-events: none;
+      cursor: not-allowed;
+      border-color: $color_border;
+      background-color: $color_disabled;
+    }
+  }
+  @each $name,$size in $size_com{
+    &.select-#{$name}{
+      .select-inner{
+        height: map_get($size,height);
+        line-height: map_get($size,height) - 2px;
+        font-size: map_get($size,font);
+      }
+    }
+  }
+}

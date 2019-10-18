@@ -1,8 +1,7 @@
 # select
-> 一个替换原生<select>的jQuery插件，支持自定义css样式
+>一个替换原生<select>的jQuery插件，支持自定义css样式
 
 ![demo preview](https://github.com/shulkme/select/blob/master/preview.png)
-
 
 ##### Example using jsDelivr
 
@@ -26,6 +25,7 @@ Example:
     <div class="select-inner"></div>
 </div>
 ```
+
 
 ### Settings
 | options    | type              | Default | Description   |

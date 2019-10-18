@@ -4,7 +4,7 @@
 [中文文档](https://github.com/shulkme/select/tree/master/zh "中文文档")
 ![demo preview](https://github.com/shulkme/select/blob/master/preview.png)
 
-##### Example using jsDelivr
+### Usage
 
 Just add a link to the css file in your `<head>`:
 
@@ -77,6 +77,6 @@ $('#select_test').select({
 |setSelect   | index  |  Dynamic setting corresponding selected item   |
 |update   | data  |Update items collection   |
 
-#### Browser support
+### Browser support
 Select works on IE8+ in addition to other modern browsers such as Chrome, Firefox, and Safari.
 > Tip : I have tested all the above. Other browsers may also support it, but I have not tested it.

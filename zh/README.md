@@ -3,7 +3,7 @@
 
 ![demo preview](https://github.com/shulkme/select/blob/master/preview.png)
 
-##### 使用
+### 使用
 
 只需在您的文件中添加指向CSS文件的链接 `<head>`:
 

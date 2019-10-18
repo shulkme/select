@@ -39,4 +39,4 @@ Example:
 | initCallback       | function              | null   | Callback function after initialization |
 | selectClick       | function              | null   | Callback function after select is opened |
 | itemClick       | function              | null   | Callback function after item Click |
-| data       | array              | [{name :'select',value :'',disabled : false}]  | Collection of items |
+| data       | array              |   | Collection of items |

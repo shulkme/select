@@ -1,7 +1,7 @@
 # Select
 > 一个替换原生select的jQuery插件，支持自定义css样式
 
-![demo preview](https://github.com/shulkme/select/blob/master/preview.png)
+![demo preview](https://github.com/shulkme/select/blob/master/select_preview.png)
 
 ### 使用
 

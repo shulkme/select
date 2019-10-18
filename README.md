@@ -1,5 +1,5 @@
-# select
->一个替换原生<select>的jQuery插件，支持自定义css样式
+# Select
+> A jquery plugin for replacing native selects, supports custom css styles
 
 ![demo preview](https://github.com/shulkme/select/blob/master/preview.png)
 
@@ -25,8 +25,6 @@ Example:
     <div class="select-inner"></div>
 </div>
 ```
-
-
 ### Settings
 | options    | type              | Default | Description   |
 | ---------- | ----------------- | ---- | ------------ |
@@ -40,3 +38,44 @@ Example:
 | selectClick       | function              | null   | Callback function after select is opened |
 | itemClick       | function              | null   | Callback function after item Click |
 | data       | array              |   | Collection of items |
+##### Responsive Option Example
+The responsive option, and value, is quite unique and powerful.
+You can use it like so:
+
+```javascript
+$('#select_test').select({
+	data:[{
+		name:'Active',
+		value:'active'
+	},{
+		name:'Item',
+		value:'item'
+	},{
+		name:'Disabled',
+		value:'disabled',
+		disabled: true
+	},{
+		name:'Item',
+		value:'item'
+	},{
+		name:'Hover',
+		value:'hover'
+	},{
+		name:'Item',
+		value:'item'
+	}]
+});
+```
+### Methods
+
+| Method  |  Argument | Description  |
+| ------------ | ------------ | ------------ |
+| disabled  | [boolean]  | Set the disabled of select. If it is empty, it will toggle disabled.   |
+|getName   | -  |  Get the currently selected name |
+|getValue   | -  | Get the currently selected value   |
+|setSelect   | index  |  Dynamic setting corresponding selected item   |
+|update   | data  |Update items collection   |
+
+#### Browser support
+Select works on IE8+ in addition to other modern browsers such as Chrome, Firefox, and Safari.
+> Tip : I have tested all the above. Other browsers may also support it, but I have not tested it.

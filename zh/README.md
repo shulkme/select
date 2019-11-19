@@ -20,60 +20,45 @@
 示例:
 
 ```html
-<div class="select" id="select_test">
-    <input type="hidden" name="" value="">
+<div class="select">
     <div class="select-inner"></div>
+	<select>
+		<option value="1">item1</option>
+		<option value="2">item2</option>
+		<option value="3">item3</option>
+		<option value="4">item4</option>
+		<option value="5">item5</option>
+	</select>
 </div>
 ```
 ### 设置
 | 选项    | 类型              | 默认值 | 注释   |
 | ---------- | ----------------- | ---- | ------------ |
-| index       | integer              | 0   | 默认选中的项目id |
 | activeClass       | string              | item-active   | 项目选中时的样式 |
 | disabledClass       | string              | select-disabled   | 选择器禁用时的样式 |
 | itemDisabledClass       | string              | item-disabled   | 项目禁用时的样式 |
 | openClass       | string              | select-open   | 选择器打开时的样式 |
 | gutter       | integer              | 2   | 列表相对选择器的偏移距离 |
-| initCallback       | function              | null   | 初始化后的回调函数 |
-| selectClick       | function              | null   | 点击选择器时的回调函数 |
-| itemClick       | function              | null   | 点击项目时的回调函数 |
-| data       | array              |   | 项目集合 |
+| placeholder       | array              |   | 没有选项时显示的文本 |
 ##### 选项示例
 熟悉以上选项后，您可以根据需要，自行配置。一个基本的示例像这样使用:
 
 ```javascript
-$('#select_test').select({
-	data:[{
-		name:'Active',
-		value:'active'
-	},{
-		name:'Item',
-		value:'item'
-	},{
-		name:'Disabled',
-		value:'disabled',
-		disabled: true
-	},{
-		name:'Item',
-		value:'item'
-	},{
-		name:'Hover',
-		value:'hover'
-	},{
-		name:'Item',
-		value:'item'
-	}]
+$('.select').select({
+//options
 });
 ```
 ### 方法
-
-| 方法  |  参数 | 说明  |
-| ------------ | ------------ | ------------ |
-| disabled  | [boolean]  | 设置选择器的禁用状态，如果没有参数，则会转换相反状态   |
-|getName   | -  |  获取当前选中的名称 |
-|getValue   | -  | 获取当前选中的值   |
-|setSelect   | index  |  手动设置选中的项目id   |
-|update   | data  |动态更新项目集合   |
+设置值或者取值时直接操作原生元素即可
+例如：
+``` javascript
+var selector = $('#select');
+//获取值
+selector.val();
+//设置值
+var index = 0;//选择器中选项的索引下标
+selector.trigger('change',index);
+```
 
 ### 浏览器支持
 除了其他现代浏览器（例如Chrome，Firefox和Safari）之外，Select还可以在IE8 +上运行。

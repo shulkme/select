@@ -1,5 +1,5 @@
 # select
-> A jQuery plug-in used as a puppet of select
+> A select plugin based on jquery
 
 [中文文档](https://github.com/shulkme/select/tree/master/zh "中文文档")
 ![demo preview](https://github.com/shulkme/select/blob/master/select_preview.png)
@@ -49,11 +49,9 @@ $('.select').select({
 });
 ```
 ### Methods
-
-On the problem of select value:
-No methos! 
 > When setting values and values, you can directly operate the native elements. Don't worry, they will be updated automatically.
 
+For example：
 ``` javascript
 var selector = $('#select');
 //get value 

@@ -83,6 +83,15 @@ $shadow : 2px 4px 12px 0px #D9D9D9;
   *zoom: 1;
   vertical-align: middle;
   position: relative;
+  font-size: 0;
+  >select{
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
   *{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;

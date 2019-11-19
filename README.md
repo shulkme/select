@@ -1,5 +1,5 @@
-# Select
-> A jquery plugin for replacing native selects, supports custom css styles
+# select
+> A jQuery plug-in used as a puppet of select
 
 [中文文档](https://github.com/shulkme/select/tree/master/zh "中文文档")
 ![demo preview](https://github.com/shulkme/select/blob/master/select_preview.png)
@@ -9,7 +9,7 @@
 Just add a link to the css file in your `<head>`:
 
 ```html
-<!-- Add the default styling select.css -->
+<!-- Add the default styling selectX.css -->
 <link rel="stylesheet" type="text/css" href="[Your Project Path]/select.css"/>
 ```
 Then, before your closing ```<body>``` tag add:
@@ -21,61 +21,47 @@ Then, before your closing ```<body>``` tag add:
 Example:
 
 ```html
-<div class="select" id="select_test">
-    <input type="hidden" name="" value="">
+<div class="select">
     <div class="select-inner"></div>
+	<select>
+		<option value="1">item1</option>
+		<option value="2">item2</option>
+		<option value="3">item3</option>
+		<option value="4">item4</option>
+		<option value="5">item5</option>
+	</select>
 </div>
 ```
 ### Settings
 | options    | type              | Default | Description   |
 | ---------- | ----------------- | ---- | ------------ |
-| index       | integer              | 0   | Default selected item ID |
 | activeClass       | string              | item-active   | Style when item is selected |
 | disabledClass       | string              | select-disabled   | Style when select is disabled |
 | itemDisabledClass       | string              | item-disabled   | Style when item is disabled |
 | openClass       | string              | select-open   | Style when select is opened |
 | gutter       | integer              | 2   | Gutter of list relative to select |
-| initCallback       | function              | null   | Callback function after initialization |
-| selectClick       | function              | null   | Callback function after select is opened |
-| itemClick       | function              | null   | Callback function after item Click |
-| data       | array              |   | Collection of items |
+| placeholder       | string              | null  | Display without options |
 ##### Responsive Option Example
-The responsive option, and value, is quite unique and powerful.
-You can use it like so:
 
 ```javascript
-$('#select_test').select({
-	data:[{
-		name:'Active',
-		value:'active'
-	},{
-		name:'Item',
-		value:'item'
-	},{
-		name:'Disabled',
-		value:'disabled',
-		disabled: true
-	},{
-		name:'Item',
-		value:'item'
-	},{
-		name:'Hover',
-		value:'hover'
-	},{
-		name:'Item',
-		value:'item'
-	}]
+$('.select').select({
+//options
 });
 ```
 ### Methods
 
-| Method  |  Argument | Description  |
-| ------------ | ------------ | ------------ |
-| disabled  | [boolean]  | Set the disabled of select. If it is empty, it will toggle disabled.   |
-|getName   | -  |  Get the currently selected name |
-|getValue   | -  | Get the currently selected value   |
-|setSelect   | index  |  Dynamic setting corresponding selected item   |
-|update   | data  |Update items collection   |
+On the problem of select value:
+No methos! 
+> When setting values and values, you can directly operate the native elements. Don't worry, they will be updated automatically.
+
+``` javascript
+var selector = $('#select');
+//get value 
+selector.val();
+//set value
+var index = 0;//Option index for selector
+selector.trigger('change',index);
+```
 
 ### Browser support
 Select works on IE8+ in addition to other modern browsers such as Chrome, Firefox, and Safari.
